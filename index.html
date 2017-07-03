@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+</head>
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+<body>
+<div class="login">
+  <div class="name">
+    <hr/>
+    中国基础教育质量检测协同创新中心检测平台登录系统
+    <hr/>
+  </div>
+  <img class="LoginEarthImg" src="images/LoginEarthImg.png" />
+  <div class="logo"><img src="images/ProjectLogoImg.png" />
+    <div class="companyname">
+      <h3 class="cn">中国基础教育质量检测协同创新中心</h3>
+      <p class="en">NationalInnovaion Center For Assesment<br />
+        Basic Education Quality</p>
+    </div>
+  </div>
+  <div class="login_box">
+    <div class="in_box">
+    	<table border="0" cellpadding="0" cellspacing="0">
+        	<tr>
+            	<td width="24%">学生ID：</td>
+                <td width="76%"><input type="text" class="userid" id="userid"  placeholder="学号"/></td>
+            </tr>
+            <tr>
+            	<td>登录密码：</td>
+                <td><input type="text" class="password" id="password" placeholder="密码"/></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td><span class="login_btn" onclick="login()">登录</span><span class="login_exit">退出</span></td>
+            </tr>
+        </table>
+    </div>
+  </div>
+</div>
+</body>
+<script src="js/common.js"></script>
+<script src="js/jquery.js"></script>
+<script>
+	
+	function login(){
+	userid = document.getElementById('userid').value;
+	password = document.getElementById('password').value;
+		 $.get("http://47.93.247.181:8092/rest/user/login?username="+userid+"&password="+password,
+		 function(data){
+		 
+				if(data.code!=200)
+				{
+					alert("用户名或密码错误");
+				}
+				else{
+					document.cookie=data.token;
+					window.location.href='q1.html'
+				}
+  		});
+	}
+	window.onload=function(){
+			document.getElementsByClassName("login")[0].style.height= window.innerHeight+'px'
+			global.name.style.left=(global.windowW-global.name.offsetWidth)/2+"px";
+			global.logo.style.right=(global.windowW-global.name.offsetWidth)/2+"px";
+			global.login_box.style.width = global.windowW*0.344+"px";
+			global.login_box.style.height = global.windowH*0.409+"px";
+			btnHeight = global.login_btn.offsetWidth*0.38 +"px";
+			global.login_btn.style.height= btnHeight;
+			global.login_btn.style.lineHeight= btnHeight;
+			global.login_exit.style.height= btnHeight;
+			global.login_exit.style.lineHeight= btnHeight;
+		}
+</script>
+</html>
