@@ -192,9 +192,9 @@ token = document.cookie;
       function( data ) {
           if(data.code==0){
              alert("提交成功！");
-             window.opener=null;
-             window.open('','_self');
-             window.close();
+            // window.opener=null;
+              window.location.href="about:blank";
+            window.close();
           }else{
               alert("提交失败，请重试！");
           }

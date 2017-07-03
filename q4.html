@@ -299,6 +299,10 @@
             topic == 2 ? document.getElementsByClassName("simulation")[0].style.display = "block" : false
             console.log(topic)
         }
+        if(topic==2){
+            document.getElementsByClassName("page")[0].children[1].innerHTML=' 提交'
+            
+        }
         if(topic>3)topic=3
         if(topic==3)
             {
@@ -338,7 +342,10 @@
         document.getElementsByClassName("keylist")[topic].style.display = "none"
         topic--
         document.getElementsByClassName("keylist")[topic].style.display = "block"
-        topic != 2 ? document.getElementsByClassName("simulation")[0].style.display = "none" : false
+        if(topic!=2){
+            document.getElementsByClassName("simulation")[0].style.display = "none";
+            document.getElementsByClassName("page")[0].children[1].innerHTML='下一题';
+        }
 
     }
     $(".answer img").click(function (e) {

@@ -39,6 +39,7 @@ user-select: none;}
 .question .top .right .help { left: 45px; top: 15px; }
 .question .top .right .time { left: 105px; top: 15px; }
 .question .top .right .page { display: inline-block; float: right; line-height: 59px; margin-right: 20px; }
+.question .top .right .page span{ cursor:pointer;}
 .question .question_body { position: relative; background: #f4f4f4; width: 1024px; margin: auto; height: calc(100% - 68px); }
 .question .question_body .title { width: 1024px; background: url(../images/QuestionReturnBtnBg.png); height: 40px; background-size: auto 100%; line-height: 40px; text-align: left; text-indent: 20px; }
 .question .question_body .keylist { margin-left: 20px; margin-top: 30px; width: 50%; float: left; }
