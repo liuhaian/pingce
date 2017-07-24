@@ -1,31 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>问题1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>问题1</title>
 </head>
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
 <body>
 <div class="question">
-  <div class="top">
-    <div class="name">NAEQ2017</div>
-    <div class="number">第一题 / 共四题</div>
-    <div class="right"><span class="help"><img src="images/GuideImg.png" /></span><span class="time"><img src="images/ClockProcess.png" /></span>
-      <div class="page"><!--<span>上一题</span>--><span onclick="next()">下一题</span></div>
+    <div class="top">
+        <div class="name">NAEQ2017</div>
+        <div class="number">第一题 / 共二十题</div>
+        <div class="right"><span class="help"><img src="images/GuideImg.png"/></span><span class="time"><img
+                src="images/ClockProcess.png"/></span>
+            <div class="page"><!--<span>上一题</span>--><span onclick="next()">下一题</span></div>
+        </div>
     </div>
-  </div>
-  <div class="question_body"> 
+    <div class="question_body">
 
-    <div class="title">第一题：海底世界（共四题）</div>
-    <dl class="keylist">
-      <dt>下面那个选项的动物中，都能生活在类似的环境里</dt>
-      <dd class="answer"><input type="radio" name="dongwu" value="1"/><img src="images/NotyetSelectStateImg.png" />马、蜗牛</dd>
-      <dd class="answer"><input type="radio" name="dongwu" value="2"/><img src="images/NotyetSelectStateImg.png" />鲸、鲨鱼</dd>
-      <dd class="answer"><input type="radio" name="dongwu" value="3"/><img src="images/NotyetSelectStateImg.png" />狗、蚯蚓</dd>
-      <dd class="answer"><input type="radio" name="dongwu" value="4"/><img src="images/NotyetSelectStateImg.png" />鸡、蜻蜓</dd>
-    </dl>
-  
-  </div>
+        <div class="title">第一题：海底世界的小丑鱼（共四题）</div>
+        <dl class="keylist">
+            <dt>下面那个选项的动物中，都能生活在类似的环境里</dt>
+            <dd class="answer"><input type="radio" name="dongwu" value="1"/><img src="images/NotyetSelectStateImg.png"/>马、蜗牛
+            </dd>
+            <dd class="answer"><input type="radio" name="dongwu" value="2"/><img src="images/NotyetSelectStateImg.png"/>鲸、鲨鱼
+            </dd>
+            <dd class="answer"><input type="radio" name="dongwu" value="3"/><img src="images/NotyetSelectStateImg.png"/>狗、蚯蚓
+            </dd>
+            <dd class="answer"><input type="radio" name="dongwu" value="4"/><img src="images/NotyetSelectStateImg.png"/>鸡、蜻蜓
+            </dd>
+        </dl>
+
+    </div>
 </div>
 </div>
 </div>
@@ -33,30 +38,29 @@
 <script src="js/common.js"></script>
 <script src="js/jquery.js"></script>
 <script>
-	window.onload=function(){
-			document.getElementsByClassName("question")[0].style.height= window.innerHeight+'px'
-		}
-			$(".answer img").click(function(e){
-			if($(this).attr("src")=="images/SelectedStateimg.png")
-			{return false}
-			$(this).parent("dd").siblings(".answer").children("img").attr("src","images/NotyetSelectStateImg.png");
-			$(this).siblings("input").attr("checked","checked");
-			$(this).parent("dd").siblings(".answer").children("input").removeAttr("checked");
-			$(this).hide().attr("src","images/SelectedStateimg.png").fadeIn(300);
-		})	
-	function next(){
-            radio = document.getElementsByName("dongwu")
-			daan = ''
-			for(i=0;i<radio.length;i++)
-			{
-				if(radio[i].checked==true)
-				{
-					daan = radio[i].value;	
-				}
-			}
-			
-			daan == ''?alert("请选择答案"):window.location.href="q2.html"
-			localStorage.one=daan
-		}
+    window.onload = function () {
+        document.getElementsByClassName("question")[0].style.height = window.innerHeight + 'px'
+    }
+    $(".answer img").click(function (e) {
+        if ($(this).attr("src") == "images/SelectedStateimg.png") {
+            return false
+        }
+        $(this).parent("dd").siblings(".answer").children("img").attr("src", "images/NotyetSelectStateImg.png");
+        $(this).siblings("input").attr("checked", "checked");
+        $(this).parent("dd").siblings(".answer").children("input").removeAttr("checked");
+        $(this).hide().attr("src", "images/SelectedStateimg.png").fadeIn(300);
+    })
+    function next() {
+        radio = document.getElementsByName("dongwu")
+        daan = ''
+        for (i = 0; i < radio.length; i++) {
+            if (radio[i].checked == true) {
+                daan = radio[i].value;
+            }
+        }
+
+        daan == '' ? alert("请选择答案") : window.location.href = "q2.html"
+        localStorage.one = daan
+    }
 </script>
 </html>

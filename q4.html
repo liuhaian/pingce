@@ -10,27 +10,27 @@
 <div class="question">
     <div class="top">
         <div class="name">NAEQ2017</div>
-        <div class="number">第四题 / 共四题</div>
+        <div class="number">第四题 / 共二十题</div>
         <div class="right"><span class="help"><img src="images/GuideImg.png"/></span><span class="time"><img
                 src="images/ClockProcess.png"/></span>
-            <div class="page"><span onclick="previous()">上一题</span> <span onclick="next()">下一题</span></div>
+            <div class="page"><span onclick="previous()">上一页</span> <span id="next" onclick="next()">下一页</span></div>
         </div>
     </div>
     <div class="question_body">
         <div class="title">第四题：西红柿种植</div>
         <!--第一页-->
-        <dl class="keylist" style="width: 100%; display:block;">
-            <dt>&nbsp&nbsp&nbsp&nbsp有两个农民要种植西红柿，农民甲在1月1日种植了西红柿，农民乙在7月1日种植了西红柿。植物生长需要大量的日光，请通过模拟实验<br>观察数据，判断哪个农民种植的西红柿生长的更好，下图是判断日落的标准。
+        <dl class="keylist" style="display:block;">
+            <dt>&nbsp&nbsp&nbsp&nbsp有两个农民想要种植西红柿。西红柿种植需要大量的阳光。你将看到农民甲、农民乙种植西红柿的两个地方白天日照时间的数据，请通过模拟实验确定哪个地方种植西红柿更好。<br>
+                &nbsp&nbsp&nbsp&nbsp首先，你将观察太阳在天空中的路径，点击"下一页"开始你的观察。
             </dt>
-            <dd class="pic_3" id="pic_3_1"><img class="pic_1" src="images/january-1-1.png"/><span id="font_1">---------地平线</span>
-            </dd>
-            <dd class="pic_3" id="pic_3_2"><span id="font_2">地平线-----------</span><img class="pic_1"
-                                                                                       src="images/july-1-1.png"/></dd>
         </dl>
-
-        <dl class="keylist" style="width: 100%;display: none;">
+        <dl class="simulation" style="display: block">
+            <img src="images/index-1.png" id="index_1" alt="">
+        </dl>
+        <!--第二页-->
+        <dl class="keylist" style="display: none;">
             <div id="title_btn">
-                <button id="play_1"></button>
+                <input id="play_1"  type="button" onclick="changeImg_1();">
                 <button id="load_1"></button>
             </div>
             <dd>
@@ -38,34 +38,56 @@
                     <source src="images/yanshi.mp4">
                 </video>
             </dd>
-            <dd class="pic_3" id="pic_4_1"><img class="pic_1" src="images/sunrise.png"/><span id="font_3">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;地平线</span>
+            <dd class="pic_3" id="pic_4_1">
+                <img class="pic_1" src="images/sunrise.png"/>
+                <span id="font_3">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;地平线</span>
             </dd>
-            <dd class="pic_3" id="pic_4_2"><span
-                    id="font_4">地平线-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</span><img class="pic_1"
-                                                                                                  src="images/sunset.png"/>
+            <dd class="pic_3" id="pic_4_2">
+                <span id="font_4">地平线-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</span>
+                <img class="pic_1" src="images/sunset.png"/>
             </dd>
 
         </dl>
-
-        <dl class="keylist" style="display: none;">
-            <h3 class="h1_color">如何运行模拟操作</h3>
-            <dt>
-            <p class="p_font">根据下述信息，运行模拟操作，从而收集数据。点击下拉菜单，回答下列问题</p></dt>
-            <dt>观察1月1日和7月1日的太阳运行轨迹。根据你的观察数据，判断 <br>下列那一个陈述是真的，并在下列输入框说明你是如何得出这个 <br>结论的</dt>
-            <dd class="answer"><input type="radio" name="jielun" value="1"/><img
-                    src="images/NotyetSelectStateImg.png">农民甲种植的西红柿生长的更好。
-            </dd>
-            <dd class="answer"><input type="radio" name="jielun" value="2"/><img
-                    src="images/NotyetSelectStateImg.png">农民乙种植的西红柿生长的更好。
-            </dd>
-            <dd class="answer"><input type="radio" name="jielun" value="3"/><img
-                    src="images/NotyetSelectStateImg.png">两个农民种植的西红柿生长一样。
-            </dd>
-            <dd class="textyu">
-                <textarea rows="10" id="textarea" cols="30" placeholder="说明你是如何得出这个结论的"></textarea>
-            </dd>
+        <dl class="simulation" style="display: none;">
+            <dt style="color: #333;margin-top:40px;">
+                太阳在天空中弯曲的轨道上移动。<br>
+                点击"播放"查看太阳一天的行进路径。<br>
+                你可以点击"暂停"停止。<br>
+                可以点击"返回"重新观察。<br>
+                &nbsp&nbsp&nbsp&nbsp首先，你将观察太阳在天空中的路径，点击"下一页"开始你的观察。<br>
+            </dt>
+            <dt style="color: #333;margin-top:50px;">
+                日出是早晨太阳第一部分出现在地平线上的时候。<br><br><br><br><br><br>
+            </dt>
+            <dt style="color: #333;margin-top:50px;">
+                日落是傍晚的时候，太阳的最后一部分消失在地平线以下。<br><br><br><br>
+            </dt>
+            <dt style="color: #333;">单击"下一页"继续</dt>
         </dl>
-        <div class="simulation" id="pic_2" style="display: none;">
+
+        <!--第三页-->
+        <dl class="keylist" style="display:none;">
+            <dt>现在你要仔细观察1月1日和7月1日太阳在天空中的行进路径。<br>
+                记录下两天日出日落的时间数据。<br>
+                然后对比观察所得的数据。<br>
+                单击"下一页"继续。
+            </dt>
+        </dl>
+        <dl class="simulation" style="display: none;">
+            <img src="images/index-2-1.png" id="index_2" alt="">
+        </dl>
+        <!--第四页-->
+        <dl class="keylist" style="display:none;">
+            <dt>点击你想观察的日期（1月1日或7月1日）。<br>
+                点击“播放”查看太阳的行进路径。<br>
+                单击“暂停”停止。<br>
+                单击“向前”或“向后”向前或向后一步一次。<br>
+                单击“返回”重新开始一天。<br>
+                现在试试所有的按钮。<br>
+                当你准备好开始记录数据时，单击“下一页”继续。
+            </dt>
+        </dl>
+        <div class="simulation" id="pic_2" style="display: none;position: relative;">
             <!--右侧演示位置代码-->
             <div id="video_box">
                 <div id="title_video">
@@ -86,25 +108,218 @@
                     <source src="images/January.mp4">
                 </video>
                 <div>
-                    <button id="play"></button>
+                    <input id="play"  type="button" onclick="changeImg();">
                     <button id="load"></button>
                     <button id="forward"></button>
                     <button id="backward"></button>
                 </div>
             </div>
             <div class="video_2">
-                <video  id="video_2">
+                <video id="video_2">
                     <source src="images/July.mp4">
                 </video>
                 <div>
-                    <button id="play_2"></button>
+                    <input id="play_2"  type="button" onclick="changeImg_2();">
                     <button id="load_2"></button>
                     <button id="forward_2"></button>
                     <button id="backward_2"></button>
                 </div>
             </div>
+            <img id="table_3" src="images/1.1.1.png" alt=""
+                 style="width: 400px;height: 280px;position: absolute;margin-left: 2%;margin-top: -90%;display: none;">
 
         </div>
+        <!--第五页-->
+        <dl class="keylist" style="display:none;">
+            <dt>首先，点击“1月1日”。<br>
+                点击“播放”查看太阳的行进路径。<br>
+                当太阳开始出现在地平线上时，点击“暂停”停止。<br>
+                单击“向前”或“向后”向前或向后一步一次。<br>
+                看看时钟，记录下1月1日日出的时间。你的答案一定要包括上午或下午。（例如：上午7:20）。<br>
+                <input type="text"><br>
+                现在，点击“播放”继续。<br>
+                当太阳的最后一部分消失在地平线以下时，点击“暂停”停止。<br>
+                1月1日，在日落的时间记录。你的答案一定要包括上午或下午。（例如：下午19:20）。<br>
+                <input type="text"><br>
+                单击“下一页”继续。
+            </dt>
+        </dl>
+        <!--第六页-->
+        <dl class="keylist" style="display:none;">
+            <dt>现在点击“7月1日”。<br>
+                点击“播放”查看太阳的行进路径。<br>
+                当太阳开始出现在地平线上时，点击“暂停”停止。<br>
+                单击“向前”或“向后”向前或向后一步一次。<br>
+                记录下7月1日日出的日落的时间。记住，你的答案一定要包括上午或下午。（例如：上午7:20）。<br>
+                7月1日日出时间 <br>
+                <input type="text"><br>
+                7月1日日落时间 <br>
+                <input type="text"><br>
+                单击“下一页”继续。
+            </dt>
+        </dl>
+        <!--第七页-->
+        <dl class="keylist" style="display:none;">
+            <dt>另一个学生通过观察记录了右边的数据。<br> 根据数据，下面哪个判断是正确的：
+            <dd class="answer"><input type="radio" name="panduan" value="1"/><img src="images/NotyetSelectStateImg.png"/>1月1日白昼时间更长。
+            </dd>
+            <dd class="answer"><input type="radio" name="panduan" value="2"/><img src="images/NotyetSelectStateImg.png"/>7月1日白昼时间更长。
+            </dd>
+            <dd class="answer"><input type="radio" name="panduan" value="3"/><img src="images/NotyetSelectStateImg.png"/>两天的日照量一样。
+            </dd>
+            <dd class="answer"><input type="radio" name="panduan" value="4"/><img src="images/NotyetSelectStateImg.png"/>无法区分。
+            </dd>
+            <dd>单击"下一页"继续。单击按钮后，你将无法返回此页面。</dd>
+            </dt>
+        </dl>
+        <dl class="simulation" id="table_1" style="display:none;">
+            <table border="4" frame="void" cellspacing="10" cellpadding="10" style="width: 450px;height: 300px;">
+                <tr>
+                    <th style="border-radius: 20px 0 0 0;text-align: center;background-color: #ebf2ed;">日期</th>
+                    <th colspan="2" style="border-radius: 0 20px 0 0;text-align: center;">
+                        日出&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp日落
+                    </th>
+
+                </tr>
+                <tr style="text-align: center;">
+                    <td rowspan="2" style="border-radius: 0 0 0 20px;background-color: #ebf2ed;">1月1日<br>7月1日</td>
+                    <td colspan="2" rowspan="2" style="border-radius: 0 0 20px 0;">
+                        上午08：38&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp下午17：22<br>上午05：22&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp下午20：26
+                    </td>
+
+
+                </tr>
+            </table>
+        </dl>
+        <!--第八页-->
+        <dl class="keylist" style="display:none;">
+            <dt>现在比较1月1日和7月1日太阳在天空的路径。<br>
+                网格线被添加到屏幕上，帮助你测量太阳在地平线上的高度。<br>
+                你认为在哪一天太阳于中午十二点的高度是最低的？
+            <dd class="answer"><input type="radio" name="gaodu" value="1"/><img src="images/NotyetSelectStateImg.png"/>1月1日
+            </dd>
+            <dd class="answer"><input type="radio" name="gaodu" value="2"/><img src="images/NotyetSelectStateImg.png"/>7月1日
+            </dd>
+            <dd class="answer"><input type="radio" name="gaodu" value="3"/><img src="images/NotyetSelectStateImg.png"/>有时是1月1日，有时是7月1日。
+            </dd>
+            <dd class="answer"><input type="radio" name="gaodu" value="4"/><img src="images/NotyetSelectStateImg.png"/>两天高度一样。
+            </dd>
+            <dd>单击"下一页"继续。单击按钮后，你将无法返回此页面。</dd>
+            </dt>
+        </dl>
+
+        <!--第九页-->
+        <dl class="keylist" style="display: none;">
+            <dt>点击左边的按钮观察太阳在1月1日和7月1日的行进路径。用网格线帮助你测量太阳到达天空的高度。描述两个关于1月1日和7月1日太阳路径的差异。</dt>
+
+            <dd class="textyu">不同一<br>
+                <textarea rows="10" cols="30" name="Difference" placeholder="说明你是如何得出这个结论的"></textarea>
+            </dd>
+            <dd class="textyu">不同二<br>
+                <textarea rows="10" cols="30" name="Difference" placeholder="说明你是如何得出这个结论的"></textarea>
+            </dd>
+        </dl>
+        <!--第十页-->
+        <dl class="keylist" style="display:none;">
+            <dt>去年一名学生观察记录了其居住地日照量。<br>
+                记录下每个月第一天的日照时长。<br>
+                右边是记录下的量表。<br>
+                根据这些数据，你认为10月1日的日照时长是多少？<br>
+                <input type="text" name="duoshao">
+            </dt>
+            <dd class="textyu">说明你是如何得出这个答案。<br>
+                <textarea rows="10" cols="30"  name="duoshao" placeholder="说明理由" style="min-width:80%;"></textarea>
+            </dd>
+            <dd>单击"下一页"继续。</dd>
+        </dl>
+        <dl class="simulation" id="table_2" style="display:none;">
+            <h1 style="color: #333;">日照数据量表</h1>
+            <table border="4" frame="void" cellspacing="10" cellpadding="10"
+                   style="width: 500px;height: 430px;margin-left: -20%">
+                <tr>
+                    <th style="border-radius: 20px 0 0 0;text-align: center;background-color: #ebf2ed;">日期</th>
+                    <th colspan="2" style="border-radius: 0 20px 0 0;text-align: center;">日照量</th>
+
+                </tr>
+                <tr style="text-align: center;">
+                    <td rowspan="12" style="border-radius: 0 0 0 20px;background-color: #ebf2ed;padding-top: 10px;">
+                        <span>1月1日<br>2月1日<br>3月1日<br>4月1日<br>5月1日<br>6月1日<br>7月1日<br>8月1日<br>9月1日<br>10月1日<br>11月1日<br>12月1日<br></span>
+                    </td>
+                    <td colspan="2" rowspan="12" style="border-radius: 0 0 20px 0;">
+                        <div style="width: 386px;height: 310px;position: relative;">
+                            <span style="position: absolute;margin-left: -185px;margin-top: 24px;">9h 15min<br>10h 15min<br>11h 15min<br>12h 30min<br>14h 0min<br>14h 45min<br>15h 0min<br>14h 30min<br>13h 15min<br><br>10h 15min<br>9h 30min</span>
+                            <span style="position: absolute;margin-left: -80px;margin-top: 24px;"><img
+                                    src="images/table-4.png" alt="" style="height: 310px;"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </dl>
+        <!--第十一页-->
+        <dl class="keylist" style="display: none;">
+            <dt>种植西红柿需要大量光照，如左图所示，两张量表分别显示日出时间、日落时间和每个季节的日照量，两个农民分别在甲乙两个地方种植西红柿，它们种植在两个地方同一类型的土壤中保持相同温度的温室里。
+                根据表中的数据，你认为在生长季节，种植西红柿在什么地方最合适？
+            </dt>
+            <dd class="answer"><input type="radio" name="difang" value="1"/><img
+                    src="images/NotyetSelectStateImg.png">甲地
+            </dd>
+            <dd class="answer"><input type="radio" name="difang" value="2"/><img
+                    src="images/NotyetSelectStateImg.png">乙地
+            </dd>
+            <dd class="answer"><input type="radio" name="difang" value="3"/><img
+                    src="images/NotyetSelectStateImg.png">两个地方一样
+            </dd>
+            <dd class="textyu">根据数据说明你是如何得出这个答案的<br>
+                <textarea id="textarea" rows="10" cols="30" name="difang" placeholder="说明理由"></textarea>
+            </dd>
+        </dl>
+        <dl class="simulation" id="table_4" style="display:none;">
+            <div style="position: relative;">
+                <img src="images/jia.png" style="width: 200px;height:160px;" alt="">
+                <span style="color:#333;position: absolute;margin-top:15%;font-size: 1.2em;">甲地西红柿生长季节</span>
+            </div>
+            <table border="4" frame="void" cellspacing="10" cellpadding="10"
+                   style="width: 400px;height: 200px;margin-left: -2%">
+                <tr>
+                    <th colspan="4" style="border-radius: 20px 0 0 0;text-align: center;background-color: #ebf2ed;">日期
+                    </th>
+                    <th colspan="4" style="text-align: center;">日出&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp日落</th>
+                    <th colspan="2" style="border-radius: 0 20px 0 0;text-align: center;">日照时长</th>
+
+                </tr>
+                <tr style="text-align: center;">
+                    <td colspan="4" style="border-radius: 0 0 0 20px;background-color: #ebf2ed;">
+                        <span>4月1日<br>5月1日<br>6月1日</span>
+                    </td>
+                    <td colspan="4">上午06：45 下午19：30<br>上午05：50 下午20：00<br>上午05：15 下午20：30
+                    </td>
+                    <td colspan="2" style="border-radius: 0 0 20px 0;">12小时45分<br>14小时10分<br>15小时15分</td>
+                </tr>
+            </table>
+            <div style="position: relative;">
+                <img src="images/yi.png" style="width: 200px;height:160px;" alt="">
+                <span style="color:#333;position: absolute;margin-top:15%;font-size: 1.2em;">乙地西红柿生长季节</span>
+            </div>
+            <table border="4" frame="void" cellspacing="10" cellpadding="10"
+                   style="width: 400px;height: 200px;margin-left: -2%">
+                <tr>
+                    <th colspan="4" style="border-radius: 20px 0 0 0;text-align: center;background-color: #ebf2ed;">日期
+                    </th>
+                    <th colspan="4" style="text-align: center;">日出&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp日落</th>
+                    <th colspan="2" style="border-radius: 0 20px 0 0;text-align: center;">日照时长</th>
+
+                </tr>
+                <tr style="text-align: center;">
+                    <td colspan="4" style="border-radius: 0 0 0 20px;background-color: #ebf2ed;">
+                        <span>4月1日<br>5月1日<br>6月1日</span>
+                    </td>
+                    <td colspan="4">上午06：50 下午19：20<br>上午06：15 下午19：45<br>上午06：00 下午20：00
+                    </td>
+                    <td colspan="2" style="border-radius: 0 0 20px 0;">12小时30分<br>13小时30分<br>14小时00分</td>
+                </tr>
+            </table>
+        </dl>
+
     </div>
 </div>
 </div>
@@ -114,8 +329,34 @@
 <script src="js/jquery.js"></script>
 <script src="js/json.js"></script>
 <!--按钮切换-->
-
 <script>
+    function changeImg_1() {
+        var obj = document.getElementById("play_1");
+        var bgImage = $(obj).css('background').split(' ')[4].split('/')[8].substr(0,10);
+        if (bgImage == "bofang.png") {
+            obj.style.backgroundImage = "url(images/zanting.png)";
+        } else {
+            obj.style.backgroundImage = "url(images/bofang.png)";
+        }
+    };
+    function changeImg() {
+        var obj = document.getElementById("play");
+        var bgImage = $(obj).css('background').split(' ')[4].split('/')[8].substr(0,10);
+        if (bgImage == "bofang.png") {
+            obj.style.backgroundImage = "url(images/zanting.png)";
+        } else {
+            obj.style.backgroundImage = "url(images/bofang.png)";
+        }
+    };
+    function changeImg_2() {
+        var obj = document.getElementById("play_2");
+        var bgImage = $(obj).css('background').split(' ')[4].split('/')[8].substr(0,10);
+        if (bgImage == "bofang.png") {
+            obj.style.backgroundImage = "url(images/zanting.png)";
+        } else {
+            obj.style.backgroundImage = "url(images/bofang.png)";
+        }
+    };
     $('#january > img').click(function () {
         $(this).attr('src', 'images/january-2.png');
         $('#july > img').attr('src', 'images/july-1.png');
@@ -124,8 +365,7 @@
         $(this).attr('src', 'images/july-2.png');
         $('#january > img').attr('src', 'images/january-1.png');
     });
-</script>
-<script>
+
     $('#january').click(function () {
         $('.video_1').show();
         $('#current').show();
@@ -137,14 +377,14 @@
         $('#current').hide();
         $('.video_2').show();
         $('#current_1').show();
-        $('.video_2').css("display","block");
-        $('#current_1').css("display","block");
+        $('.video_2').css("display", "block");
+        $('#current_1').css("display", "block");
     });
     window.onload = function () {
         document.getElementsByClassName("question")[0].style.height = window.innerHeight + 'px'
     }
-    function next(){
-       
+    function next() {
+
     }
 </script>
 
@@ -213,7 +453,7 @@
     var forward_2 = document.getElementById("forward_2");
     var backward_2 = document.getElementById("backward_2");
     var progress = document.getElementById("progress");
-    var current_1= document.getElementById("current_1");
+    var current_1 = document.getElementById("current_1");
     var total = document.getElementById("total");
     function video_2(id) {
 
@@ -271,9 +511,21 @@
     var load_1 = document.getElementById("load_1");
 
 
+    //    play_1.addEventListener("click", function (e) {
+    //        $('#video_3').trigger('play');
+    //
+    //    });
     play_1.addEventListener("click", function (e) {
-        $('#video_3').trigger('play');
 
+        if ($(video_3).hasClass('pause')) {
+            $('#video_3').trigger("pause");
+            $(video_3).removeClass('pause');
+            $(video_3).addClass('play');
+        } else {
+            $('#video_3').trigger("play");
+            $(video_3).removeClass('play');
+            $(video_3).addClass('pause');
+        }
     });
 
     load_1.addEventListener("click", function (e) {
@@ -290,63 +542,191 @@
     }
 
     topic = 0;
-    function next() {
-        var daan = '';
-        topic++  
-        if(topic < 3){
-            document.getElementsByClassName("keylist")[topic-1].style.display = "none"           
+    var eight = {};
+  function next() {
+    //if(topic == 10)
+      //      {
+        //        return false
+          //  }
+    switch(topic){
+        case 4:
+        eight.a1=document.getElementsByClassName("keylist")[topic].children[0].getElementsByTagName("input")[0].value;
+        eight.a2=document.getElementsByClassName("keylist")[topic].children[0].getElementsByTagName("input")[1].value;    
+        if(eight.a1=='' || eight.a2=='')
+            {alert("请输入答案");return}
+        break;
+        case 5:
+        eight.b1=document.getElementsByClassName("keylist")[topic].children[0].getElementsByTagName("input")[0].value;
+        eight.b2=document.getElementsByClassName("keylist")[topic].children[0].getElementsByTagName("input")[0].value;
+        if(eight.b1=='' || eight.b2=='')
+            {alert("请输入答案");return}
+        break;
+        case 6:
+        radio = document.getElementsByName("panduan")					
+        for(i=0;i<radio.length;i++)
+            {
+                if(radio[i].checked==true)
+                    {
+                        eight.c = radio[i].value;	
+                    }
+            }
+        if(!eight.c)
+            {alert("请选择答案");return}
+        break;
+        case 7:
+        radio = document.getElementsByName("gaodu")					
+        for(i=0;i<radio.length;i++)
+            {
+                if(radio[i].checked==true)
+                    {
+                        eight.d = radio[i].value;	
+                    }
+            }
+        if(!eight.d)
+            {alert("请选择答案");return}
+        break;
+        case 8:
+        eight.e1=document.getElementsByName("Difference")[0].value
+        eight.e2=document.getElementsByName("Difference")[1].value
+        if(eight.e1=='' || eight.e2==''){
+            alert("请输入答案");return
+        }
+        break;
+        case 9:
+        eight.f1=document.getElementsByName("duoshao")[0].value
+        eight.f2=document.getElementsByName("duoshao")[1].value
+        if(eight.f1=='' || eight.f2==''){
+            alert("请输入答案");return
+        }
+        document.getElementById("next").innerHTML='提交';
+        break;    
+        case 10:
+        radio = document.getElementsByName("difang")					
+        for(i=0;i<radio.length-1;i++)
+            {
+                if(radio[i].checked==true)
+                    {
+                        eight.g1 = radio[i].value;	
+                    }
+            }
+        eight.g2 = radio[3].value;
+        if(!eight.g1 || eight.g2=='')
+        {alert("请选择答案");return}
+        localStorage.eight= JSON.stringify(eight)
+        if(confirm("确认提交？"))
+        {
+            postanswer()
+            //window.open("about:blank");
+            //window.close();
+        }
+        {   
+            return false;
+        }
+       
+        //window.open("about:blank","_blank");
+        //window.close();
+        break;
+    }
+        topic++;
+        if (topic <=3) {
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "none"
             document.getElementsByClassName("keylist")[topic].style.display = "block"
-            topic == 2 ? document.getElementsByClassName("simulation")[0].style.display = "block" : false
+            document.getElementsByClassName("simulation")[topic - 1].style.display = "none"
+            document.getElementsByClassName("simulation")[topic].style.display = "block"
+//            topic == 2 ? document.getElementsByClassName("simulation")[0].style.display = "block" : false
+            console.log(topic);
+        }
+        if (topic >3 && topic<8) {
+            if(topic==6){
+                document.getElementById("table_1").style.display = "block"
+                document.getElementById("pic_2").style.display = "none"
+            }
+            else{
+                 document.getElementById("table_1").style.display = "none"
+                document.getElementById("pic_2").style.display = "block"
+            }
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "none"
+            document.getElementsByClassName("keylist")[topic].style.display = "block"
             console.log(topic)
         }
-        if(topic==2){
-            document.getElementsByClassName("page")[0].children[1].innerHTML=' 提交'
+       
+        if (topic == 8) {
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "none"
+            document.getElementsByClassName("keylist")[topic].style.display = "block"
+            document.getElementById("pic_2").style.display = "block"
+            document.getElementById("table_3").style.display = "block"
+            console.log(topic)
+        }
+        if (topic == 9) {
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "none"
+            document.getElementsByClassName("keylist")[topic].style.display = "block"
+            document.getElementById("table_2").style.display = "block"
+            document.getElementById("pic_2").style.display = "none"
+            document.getElementById("table_3").style.display = "none"
+            console.log(topic)
+        }
+        if (topic == 10) {
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "none"
+            document.getElementsByClassName("keylist")[topic].style.display = "block"
+            document.getElementById("table_4").style.display = "block"
+            document.getElementById("table_2").style.display = "none"
+            console.log(topic)
             
         }
-        if(topic>3)topic=3
-        if(topic==3)
-            {
-                radio = document.getElementsByName("jielun");
-        textarea=document.getElementById("textarea").value;
-        for(i=0;i<radio.length;i++)
-					{
-						if(radio[i].checked==true)
-						{
-							daan=radio[i].value;	
-						}
-					}
-        if(daan=='' || textarea=='')
-            {
-                alert("请将答案填写完整");
-                topic--
-                return false
-            }
-        eight={
-            'daan':daan,
-            'textarea':textarea
-        }
-        localStorage.eight= JSON.stringify(eight)
-                //alert("确认提交？")
-                if(confirm("确认提交？")){ postanswer(); }
 
-                //window.open('','_self');
-                //window.close();
-				
-            }
-        
+
     }
     function previous() {
         if (topic < 1) {
             return false
         }
-        document.getElementsByClassName("keylist")[topic].style.display = "none"
-        topic--
-        document.getElementsByClassName("keylist")[topic].style.display = "block"
-        if(topic!=2){
-            document.getElementsByClassName("simulation")[0].style.display = "none";
-            document.getElementsByClassName("page")[0].children[1].innerHTML='下一题';
+         console.log(topic)
+        if (topic <=3) {
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "block"
+            document.getElementsByClassName("keylist")[topic].style.display = "none"
+            document.getElementsByClassName("simulation")[topic - 1].style.display = "block"
+            document.getElementsByClassName("simulation")[topic].style.display = "none"
+//            topic == 2 ? document.getElementsByClassName("simulation")[0].style.display = "block" : false
+          
         }
-
+        if (topic >3 && topic<8) {
+            if(topic==6){
+                document.getElementById("table_1").style.display = "block"
+                document.getElementById("pic_2").style.display = "none"
+            }
+            else{
+                 document.getElementById("table_1").style.display = "none"
+                document.getElementById("pic_2").style.display = "block"
+            }
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "block"
+            document.getElementsByClassName("keylist")[topic].style.display = "none"
+          
+        }
+       
+        if (topic == 8) {
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "block"
+            document.getElementsByClassName("keylist")[topic].style.display = "none"
+            document.getElementById("pic_2").style.display = "block"
+            document.getElementById("table_3").style.display = "none"
+          
+        }
+        if (topic == 9) {
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "block"
+            document.getElementsByClassName("keylist")[topic].style.display = "none"
+            document.getElementById("table_2").style.display = "none"
+            document.getElementById("pic_2").style.display = "block"
+            document.getElementById("table_3").style.display = "block"
+            
+        }
+        if (topic == 10) {
+            document.getElementsByClassName("keylist")[topic - 1].style.display = "block"
+            document.getElementsByClassName("keylist")[topic].style.display = "none"
+            document.getElementById("table_4").style.display = "none"
+            document.getElementById("table_2").style.display = "block"
+           
+        }
+        topic--
+       
     }
     $(".answer img").click(function (e) {
         if ($(this).attr("src") == "images/SelectedStateimg.png") {

@@ -10,7 +10,7 @@
 <div class="question">
     <div class="top">
         <div class="name">NAEQ2017</div>
-        <div class="number">第三题 / 共四题</div>
+        <div class="number">第一题 / 共二十题</div>
         <div class="right"><span class="help"><img src="images/GuideImg.png"/></span><span class="time"><img
                 src="images/ClockProcess.png"/></span>
             <div class="page"><span>上一题</span> <span onclick="next()">下一题</span></div>
@@ -18,39 +18,26 @@
     </div>
     <div class="question_body">
 
-        <div class="title">第三题：地理位置</div>
-        <div style="height: 350px">
+        <div class="title">第一题：地理位置</div>
         <dl class="keylist">
-            <dt>观察右侧，有发光标记的位于A点</dt>
+            <dt>观察右侧，有发光标记的位于</dt>
             <dd class="selectbox"><select id="left">
                 <option>请选择</option>
-                <option value=1>亚洲</option>
-                <option value=2>欧洲</option>
-                <option value=3>南美洲</option>
-                <option value=4>大洋洲</option>
-            </select>
-            </dd>
-        </dl>
-        <div class="simulation">
-            <img src="images/A.png" width="65%" >
-        </div>
-        </div>
-        <div style="height: 350px;">
-        <dl class="keylist">
-            <dt>观察右侧，有发光标记的位于B点</dt>
-            <dd class="selectbox"><select id="left_1">
+                <option value="1">亚洲</option>
+                <option value="2">欧洲</option>
+                <option value="3">南美洲</option>
+                <option value="4">大洋洲</option>
+            </select> 和 <select id="right">
                 <option>请选择</option>
-                <option value=1>亚洲</option>
-                <option value=2>欧洲</option>
-                <option value=3>南美洲</option>
-                <option value=4>大洋洲</option>
-            </select>
-            </dd>
+                <option value="1">亚洲</option>
+                <option value="2">欧洲</option>
+                <option value="3">南美洲</option>
+                <option value="4">大洋洲</option>
+            </select></dd>
         </dl>
         <div class="simulation">
-            <img src="images/B.png" width="65%">
+            <video src="images/diqiu.mov" width="100%" autoplay="autoplay"></video>
         </div>
-            </div>
     </div>
 </div>
 </div>
@@ -64,16 +51,15 @@
     }
     function next() {
         left = document.getElementById("left").value;
-        left_1 = document.getElementById("left_1").value;
-            if (left == "请选择" && left_1 == "请选择") {
-                alert("请选择答案");
+        right = document.getElementById("right").value;
+        if (left == "请选择" && right == "请选择") {
+            alert("请选择答案");
+        }
+        else {
+            seven = {
+                "left": left,
+                "right": right
             }
-            else {
-                seven = {
-                    "left": left,
-                    "left_1": left_1
-                }
-
             localStorage.seven = JSON.stringify(seven)
             window.location.href = "q4.html"
         }

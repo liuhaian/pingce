@@ -5,25 +5,25 @@ json = {
    "userId":0,
    "username":"s3",
    "unitResults":[
-      {
-         "unitId":101000,
-         "questionResults":[
-            {
-               "timeUsed":6020,
-               "questionId":101010,
-               "checkAnswer":localStorage.one,
-                //第一题 array0
-               "supportDatas":[
-
-               ],
-               "records":{
-                  "record":[
-
-                  ]
-               }
-            }
-         ]
-      },
+//      {
+//         "unitId":101000,
+//         "questionResults":[
+//            {
+//               "timeUsed":6020,
+//               "questionId":101010,
+//               "checkAnswer":localStorage.one,
+//                //第一题 array0
+//               "supportDatas":[
+//
+//               ],
+//               "records":{
+//                  "record":[
+//
+//                  ]
+//               }
+//            }
+//         ]
+//      },
       {
          "unitId":102000,
          "questionResults":[
@@ -45,7 +45,7 @@ json = {
                       
                   ]
                }
-            },//二题(1) array1
+            },//二题(1) array1,//二题(1) array1
              {
                  "timeUsed":8193,
                  "questionId":7,
@@ -160,44 +160,200 @@ json = {
          "questionResults":[
             {
                "timeUsed":334,
-               "questionId":105050,
-               "checkAnswer":JSON.parse(localStorage.getItem("eight")).daan,
-               "inputAnswer":JSON.parse(localStorage.getItem("eight")).textarea,
+               "questionId":10,
+               "inputAnswer":JSON.parse(localStorage.eight).a1,
                "multiDropDownAnswer":{
                     "index":[
-
                     ]
                 },
-                "supportDatas":[],
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            }, {
+               "timeUsed":334,
+               "questionId":11,
+               "inputAnswer":JSON.parse(localStorage.eight).a2,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },
+            {
+               "timeUsed":334,
+               "questionId":12,
+               "inputAnswer":JSON.parse(localStorage.eight).b1,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },{
+               "timeUsed":334,
+               "questionId":13,
+               "inputAnswer":JSON.parse(localStorage.eight).b2,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },
+            {
+               "timeUsed":334,
+               "questionId":14,
+               "checkAnswer":JSON.parse(localStorage.eight).c,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },
+            {
+               "timeUsed":334,
+               "questionId":15,
+               "checkAnswer":JSON.parse(localStorage.eight).d,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },
+            {
+               "timeUsed":334,
+               "questionId":16,
+               "inputAnswer":JSON.parse(localStorage.eight).e1,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },{
+               "timeUsed":334,
+               "questionId":17,
+               "inputAnswer":JSON.parse(localStorage.eight).e2,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },
+            {
+               "timeUsed":334,
+               "questionId":18,
+               "inputAnswer":JSON.parse(localStorage.eight).f1,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },{
+               "timeUsed":334,
+               "questionId":19,
+               "inputAnswer":JSON.parse(localStorage.eight).f2,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
+               "records":{
+                  "record":[
+                        
+                  ]
+               }
+            },
+            {
+               "timeUsed":334,
+               "questionId":18,
+                "checkAnswer":JSON.parse(localStorage.eight).g1,
+               "inputAnswer":JSON.parse(localStorage.eight).g2,
+               "multiDropDownAnswer":{
+                    "index":[
+                    ]
+                },
+                "supportDatas":[
+                  
+               ],
                "records":{
                   "record":[
                         
                   ]
                }
             }
-         ]//四题
+         ]
       }
    ]
 }
 
 json = JSON.stringify(json);
-token = document.cookie;
   $.post("http://47.93.247.181:8092/rest/submit/",
 		 {
-			 username:'s3',
-			 token:token,
+			 username:localStorage.userid,
+			 token:localStorage.token,
 			 type:'10',
 			 examresult:json
-		 },
-      function( data ) {
-          if(data.code==0){
-             alert("提交成功！");
-            // window.opener=null;
-              window.location.href="about:blank";
-            window.close();
-          }else{
-              alert("提交失败，请重试！");
-          }
-      }
+		 }
 		)
 }
