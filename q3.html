@@ -48,6 +48,7 @@
 <script>
     window.onload = function () {
         document.getElementsByClassName("question")[0].style.height = window.innerHeight + 'px'
+		timeqi();
     }
     function next() {
         left = document.getElementById("left").value;
@@ -58,7 +59,8 @@
         else {
             seven = {
                 "left": left,
-                "right": right
+                "right": right,
+				"time":time*1000
             }
             localStorage.seven = JSON.stringify(seven)
             window.location.href = "q4.html"

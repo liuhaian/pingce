@@ -28,7 +28,7 @@ json = {
          "unitId":102000,
          "questionResults":[
             {
-               "timeUsed":400,
+               "timeUsed":JSON.parse(localStorage.getItem("two")).time,
                "questionId":6,
                "checkAnswer":0,
                "multiDropDownAnswer":{
@@ -47,7 +47,7 @@ json = {
                }
             },//二题(1) array1,//二题(1) array1
              {
-                 "timeUsed":8193,
+                 "timeUsed":JSON.parse(localStorage.getItem("three")).time,
                  "questionId":7,
                  "checkAnswer":JSON.parse(localStorage.getItem("three")).daan,
                  "multiDropDownAnswer":{
@@ -70,7 +70,7 @@ json = {
                  }
              }, //二题(2) array2
              {
-                 "timeUsed":334,
+                 "timeUsed":JSON.parse(localStorage.getItem("four")).time,
                  "questionId":8,
                  "checkAnswer":JSON.parse(localStorage.getItem("four")).daan,
                  "inputAnswer":JSON.parse(localStorage.getItem("four")).yuanyin,
@@ -89,7 +89,7 @@ json = {
                  }
              },//二题(3) array3
              {
-                 "timeUsed":334,
+                 "timeUsed":JSON.parse(localStorage.getItem("five")).time,
                  "questionId":102020,
                  "checkAnswer":JSON.parse(localStorage.getItem("five")).daan,
                  "inputAnswer":JSON.parse(localStorage.getItem("five")).yuanyin,
@@ -108,7 +108,7 @@ json = {
                  }
              }, //二题(4) array4
              {
-                 "timeUsed":334,
+                 "timeUsed":JSON.parse(localStorage.getItem("six")).time,
                  "questionId":9,
                  "checkAnswer":JSON.parse(localStorage.getItem("six")).daan,
                  "inputAnswer":JSON.parse(localStorage.getItem("six")).yuanyin,
@@ -136,7 +136,7 @@ json = {
          "unitId":103000,
          "questionResults":[
             {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.getItem("seven")).time,
                "questionId":103030,
                "checkAnswer":JSON.parse(localStorage.getItem("seven")).daan,
                "multiDropDownAnswer":{
@@ -159,7 +159,7 @@ json = {
          "unitId":105000,
          "questionResults":[
             {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).atime,
                "questionId":10,
                "inputAnswer":JSON.parse(localStorage.eight).a1,
                "multiDropDownAnswer":{
@@ -175,7 +175,7 @@ json = {
                   ]
                }
             }, {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).atime,
                "questionId":11,
                "inputAnswer":JSON.parse(localStorage.eight).a2,
                "multiDropDownAnswer":{
@@ -192,7 +192,7 @@ json = {
                }
             },
             {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).btime,
                "questionId":12,
                "inputAnswer":JSON.parse(localStorage.eight).b1,
                "multiDropDownAnswer":{
@@ -208,7 +208,7 @@ json = {
                   ]
                }
             },{
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).btime,
                "questionId":13,
                "inputAnswer":JSON.parse(localStorage.eight).b2,
                "multiDropDownAnswer":{
@@ -225,7 +225,7 @@ json = {
                }
             },
             {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).ctime,
                "questionId":14,
                "checkAnswer":JSON.parse(localStorage.eight).c,
                "multiDropDownAnswer":{
@@ -242,7 +242,7 @@ json = {
                }
             },
             {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).dtime,
                "questionId":15,
                "checkAnswer":JSON.parse(localStorage.eight).d,
                "multiDropDownAnswer":{
@@ -259,7 +259,7 @@ json = {
                }
             },
             {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).etime,
                "questionId":16,
                "inputAnswer":JSON.parse(localStorage.eight).e1,
                "multiDropDownAnswer":{
@@ -275,7 +275,7 @@ json = {
                   ]
                }
             },{
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).etime,
                "questionId":17,
                "inputAnswer":JSON.parse(localStorage.eight).e2,
                "multiDropDownAnswer":{
@@ -292,7 +292,7 @@ json = {
                }
             },
             {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).ftime,
                "questionId":18,
                "inputAnswer":JSON.parse(localStorage.eight).f1,
                "multiDropDownAnswer":{
@@ -308,7 +308,7 @@ json = {
                   ]
                }
             },{
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).ftime,
                "questionId":19,
                "inputAnswer":JSON.parse(localStorage.eight).f2,
                "multiDropDownAnswer":{
@@ -325,7 +325,7 @@ json = {
                }
             },
             {
-               "timeUsed":334,
+               "timeUsed":JSON.parse(localStorage.eight).gtime,
                "questionId":18,
                 "checkAnswer":JSON.parse(localStorage.eight).g1,
                "inputAnswer":JSON.parse(localStorage.eight).g2,
@@ -354,6 +354,16 @@ json = JSON.stringify(json);
 			 token:localStorage.token,
 			 type:'10',
 			 examresult:json
-		 }
+		 },
+		  function( data ) {
+			  if(data.code==0){
+				 alert("提交成功！");
+				// window.opener=null;
+				  window.location.href="about:blank";
+				window.close();
+			  }else{
+				  alert("提交失败，请重试！");
+			  }
+		  }
 		)
 }

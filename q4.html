@@ -549,17 +549,24 @@
         //        return false
           //  }
     switch(topic){
-        case 4:
+		case 3:
+		timeqi();
+		break;
+        case 4:		
         eight.a1=document.getElementsByClassName("keylist")[topic].children[0].getElementsByTagName("input")[0].value;
         eight.a2=document.getElementsByClassName("keylist")[topic].children[0].getElementsByTagName("input")[1].value;    
         if(eight.a1=='' || eight.a2=='')
             {alert("请输入答案");return}
+		eight.atime=time*1000
+		cleartimeqi();
         break;
         case 5:
         eight.b1=document.getElementsByClassName("keylist")[topic].children[0].getElementsByTagName("input")[0].value;
         eight.b2=document.getElementsByClassName("keylist")[topic].children[0].getElementsByTagName("input")[0].value;
         if(eight.b1=='' || eight.b2=='')
             {alert("请输入答案");return}
+		eight.btime=time*1000
+		cleartimeqi();
         break;
         case 6:
         radio = document.getElementsByName("panduan")					
@@ -572,6 +579,8 @@
             }
         if(!eight.c)
             {alert("请选择答案");return}
+		eight.ctime=time*1000
+		cleartimeqi();	
         break;
         case 7:
         radio = document.getElementsByName("gaodu")					
@@ -584,6 +593,8 @@
             }
         if(!eight.d)
             {alert("请选择答案");return}
+		eight.dtime=time*1000
+		cleartimeqi();		
         break;
         case 8:
         eight.e1=document.getElementsByName("Difference")[0].value
@@ -591,6 +602,8 @@
         if(eight.e1=='' || eight.e2==''){
             alert("请输入答案");return
         }
+		eight.etime=time*1000
+		cleartimeqi();		
         break;
         case 9:
         eight.f1=document.getElementsByName("duoshao")[0].value
@@ -599,6 +612,8 @@
             alert("请输入答案");return
         }
         document.getElementById("next").innerHTML='提交';
+		eight.ftime=time*1000
+		cleartimeqi();
         break;    
         case 10:
         radio = document.getElementsByName("difang")					
@@ -612,6 +627,8 @@
         eight.g2 = radio[3].value;
         if(!eight.g1 || eight.g2=='')
         {alert("请选择答案");return}
+		eight.gtime=time*1000
+		clearTimeout(a)
         localStorage.eight= JSON.stringify(eight)
         if(confirm("确认提交？"))
         {

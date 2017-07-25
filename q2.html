@@ -438,9 +438,10 @@
 					case 0:
 					return true;
 					case 1:
+					timeqi();
 					return true;
 					break;
-					case 2:
+					case 2:					
 					data = {
 					q1:$(".selectbox:eq(0) option:selected").val(),
 					q2:$(".selectbox:eq(1) option:selected").val()
@@ -449,6 +450,8 @@
 					alert("请选择答案");
 					return false;
 					}
+					data.time=time*1000;
+					cleartimeqi();
 					localStorage.two = JSON.stringify(data)
 					return true
 					break;
@@ -470,7 +473,7 @@
 						return false;
 					}
 					else{
-						three.daan = daan	
+						three.daan = daan
 					}
 					table = document.getElementsByClassName("gray")
 					if(table.length<2)
@@ -496,7 +499,8 @@
 							three.table[i]=dataMap
 						}		
 					}
-					
+					three.time=time*1000
+					cleartimeqi();
 					localStorage.three= JSON.stringify(three)
 					return true
 					break;
@@ -547,6 +551,8 @@
 							four.table[i]=dataMap
 						}		
 					}
+					four.time=time*1000
+					cleartimeqi()
 					localStorage.four= JSON.stringify(four)
 					return true
 					break;
@@ -597,6 +603,8 @@
 							five.table[i]=dataMap
 						}		
 					}
+					five.time=time*1000;
+					cleartimeqi();
 					localStorage.five= JSON.stringify(five)
 					return true
 					break;
@@ -647,11 +655,14 @@
 							six.table[i]=dataMap
 						}		
 					}
+					six.time=time*1000;
+					cleartimeqi();
 					localStorage.six= JSON.stringify(six)
 					window.location.href="q3.html"
 					return true
 					break;
 				}
 			}
+
 </script>
 </html>
