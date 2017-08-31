@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>问题2</title>
+<title>问题1</title>
 </head>
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
 <body>
@@ -545,9 +545,17 @@
 
 						for(i=0;i<table.length;i++)
 						{
-							dataMap = "'温度':"+table[i].children[0].innerHTML+",'湿度':"+table[i].children[1].innerHTML+",'饮水':"+table[i].children[2].innerHTML+",'出汗量':"+table[i].children[3].innerHTML+",'失水量':"+table[i].children[4].innerHTML+",'体温':"+table[i].children[5].innerHTML
+						    dataMap = {'温度':table[i].children[0].innerHTML,
+							'湿度':table[i].children[1].innerHTML,
+							'饮水':table[i].children[2].innerHTML,
+							'出汗量':table[i].children[3].innerHTML,
+							'失水量':table[i].children[4].innerHTML,
+							'体温':table[i].children[5].innerHTML.slice(0,-23)
+							}
                             
-							dataMap =dataMap.substring(0,dataMap.length-23)
+							//dataMap = "'温度':"+table[i].children[0].innerHTML+",'湿度':"+table[i].children[1].innerHTML+",'饮水':"+table[i].children[2].innerHTML+",'出汗量':"+table[i].children[3].innerHTML+",'失水量':"+table[i].children[4].innerHTML+",'体温':"+table[i].children[5].innerHTML
+                            
+							//dataMap =dataMap.substring(0,dataMap.length-23)
 							four.table[i]=dataMap
 						}		
 					}
@@ -597,9 +605,17 @@
 
 						for(i=0;i<table.length;i++)
 						{
-							dataMap = "'温度':"+table[i].children[0].innerHTML+",'湿度':"+table[i].children[1].innerHTML+",'饮水':"+table[i].children[2].innerHTML+",'出汗量':"+table[i].children[3].innerHTML+",'失水量':"+table[i].children[4].innerHTML+",'体温':"+table[i].children[5].innerHTML
+							dataMap = {'温度':table[i].children[0].innerHTML,
+							'湿度':table[i].children[1].innerHTML,
+							'饮水':table[i].children[2].innerHTML,
+							'出汗量':table[i].children[3].innerHTML,
+							'失水量':table[i].children[4].innerHTML,
+							'体温':table[i].children[5].innerHTML.slice(0,-23)
+							}
                             
-							dataMap =dataMap.substring(0,dataMap.length-23)
+							//dataMap = "'温度':"+table[i].children[0].innerHTML+",'湿度':"+table[i].children[1].innerHTML+",'饮水':"+table[i].children[2].innerHTML+",'出汗量':"+table[i].children[3].innerHTML+",'失水量':"+table[i].children[4].innerHTML+",'体温':"+table[i].children[5].innerHTML
+                            
+							//dataMap =dataMap.substring(0,dataMap.length-23)
 							five.table[i]=dataMap
 						}		
 					}
@@ -649,9 +665,17 @@
 
 						for(i=0;i<table.length;i++)
 						{
-							dataMap = "'温度':"+table[i].children[0].innerHTML+",'湿度':"+table[i].children[1].innerHTML+",'饮水':"+table[i].children[2].innerHTML+",'出汗量':"+table[i].children[3].innerHTML+",'失水量':"+table[i].children[4].innerHTML+",'体温':"+table[i].children[5].innerHTML
+							dataMap = {'温度':table[i].children[0].innerHTML,
+							'湿度':table[i].children[1].innerHTML,
+							'饮水':table[i].children[2].innerHTML,
+							'出汗量':table[i].children[3].innerHTML,
+							'失水量':table[i].children[4].innerHTML,
+							'体温':table[i].children[5].innerHTML.slice(0,-23)
+							}
                             
-							dataMap =dataMap.substring(0,dataMap.length-23)
+							//dataMap = "'温度':"+table[i].children[0].innerHTML+",'湿度':"+table[i].children[1].innerHTML+",'饮水':"+table[i].children[2].innerHTML+",'出汗量':"+table[i].children[3].innerHTML+",'失水量':"+table[i].children[4].innerHTML+",'体温':"+table[i].children[5].innerHTML
+                            
+							//dataMap =dataMap.substring(0,dataMap.length-23)
 							six.table[i]=dataMap
 						}		
 					}

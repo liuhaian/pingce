@@ -3,7 +3,7 @@ json = {
    "_id":0,
    "examinationId":100000,
    "userId":0,
-   "username":"s3",
+   "username":localStorage.getItem("userid"),
    "unitResults":[
 //      {
 //         "unitId":101000,
@@ -32,7 +32,7 @@ json = {
                "questionId":6,
                "checkAnswer":0,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                         parseInt(JSON.parse(localStorage.getItem("two")).q1),
                         parseInt(JSON.parse(localStorage.getItem("two")).q2)
                     ]
@@ -57,10 +57,10 @@ json = {
                  },
                  "supportDatas":[
                      {
-                         "dataMap":JSON.parse(localStorage.getItem("three")).table[0].dataMap
+                         "dataMap":JSON.parse(localStorage.getItem("three")).table[0]
                      },
                      {
-                         "dataMap":JSON.parse(localStorage.getItem("three")).table[1].dataMap
+                         "dataMap":JSON.parse(localStorage.getItem("three")).table[1]
                      }
                  ],
                  "records":{
@@ -76,10 +76,10 @@ json = {
                  "inputAnswer":JSON.parse(localStorage.getItem("four")).yuanyin,
                  "supportDatas":[
                      {
-                         "dataMap":JSON.parse(localStorage.getItem("four")).table[0].dataMap
+                         "dataMap":JSON.parse(localStorage.getItem("four")).table[0]
                      },
                      {
-                         "dataMap":JSON.parse(localStorage.getItem("four")).table[1].dataMap
+                         "dataMap":JSON.parse(localStorage.getItem("four")).table[1]
                      }
                  ],
                  "records":{
@@ -95,10 +95,10 @@ json = {
                  "inputAnswer":JSON.parse(localStorage.getItem("five")).yuanyin,
                  "supportDatas":[
                      {
-                         "dataMap":JSON.parse(localStorage.getItem("five")).table[0].dataMap
+                         "dataMap":JSON.parse(localStorage.getItem("five")).table[0]
                      },
                      {
-                         "dataMap":JSON.parse(localStorage.getItem("five")).table[1].dataMap
+                         "dataMap":JSON.parse(localStorage.getItem("five")).table[1]
                      }
                  ],
                  "records":{
@@ -114,10 +114,10 @@ json = {
                  "inputAnswer":JSON.parse(localStorage.getItem("six")).yuanyin,
                  "supportDatas":[
                      {
-                         "dataMap":JSON.parse(localStorage.getItem("six")).table[0].dataMap
+                         "dataMap":JSON.parse(localStorage.getItem("six")).table[0]
                      },
                      {
-                         "dataMap":JSON.parse(localStorage.getItem("six")).table[1].dataMap
+                         "dataMap":JSON.parse(localStorage.getItem("six")).table[1]
                      }
                  ],
                  "records":{
@@ -140,7 +140,7 @@ json = {
                "questionId":103030,
                "checkAnswer":JSON.parse(localStorage.getItem("seven")).daan,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                         parseInt(JSON.parse(localStorage.getItem("seven")).left),
                         parseInt(JSON.parse(localStorage.getItem("seven")).right)
                     ]
@@ -163,7 +163,7 @@ json = {
                "questionId":10,
                "inputAnswer":JSON.parse(localStorage.eight).a1,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -179,7 +179,7 @@ json = {
                "questionId":11,
                "inputAnswer":JSON.parse(localStorage.eight).a2,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -196,7 +196,7 @@ json = {
                "questionId":12,
                "inputAnswer":JSON.parse(localStorage.eight).b1,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -212,7 +212,7 @@ json = {
                "questionId":13,
                "inputAnswer":JSON.parse(localStorage.eight).b2,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -229,7 +229,7 @@ json = {
                "questionId":14,
                "checkAnswer":JSON.parse(localStorage.eight).c,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -246,7 +246,7 @@ json = {
                "questionId":15,
                "checkAnswer":JSON.parse(localStorage.eight).d,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -263,7 +263,7 @@ json = {
                "questionId":16,
                "inputAnswer":JSON.parse(localStorage.eight).e1,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -279,7 +279,7 @@ json = {
                "questionId":17,
                "inputAnswer":JSON.parse(localStorage.eight).e2,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -296,7 +296,7 @@ json = {
                "questionId":18,
                "inputAnswer":JSON.parse(localStorage.eight).f1,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -312,7 +312,7 @@ json = {
                "questionId":19,
                "inputAnswer":JSON.parse(localStorage.eight).f2,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
@@ -330,7 +330,7 @@ json = {
                 "checkAnswer":JSON.parse(localStorage.eight).g1,
                "inputAnswer":JSON.parse(localStorage.eight).g2,
                "multiDropDownAnswer":{
-                    "index":[
+                    "indexes":[
                     ]
                 },
                 "supportDatas":[
